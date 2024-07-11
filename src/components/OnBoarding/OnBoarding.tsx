@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
+import { BsArrowRightCircleFill } from "react-icons/bs";
 
 function OnBoarding() {
     const [nomeFantasia, setNomeFantasia] = useState('');
@@ -54,9 +55,9 @@ function OnBoarding() {
 
             <button 
                 type="submit" 
-                className="border border-black px-4 py-2 rounded"
+                className="border border-black px-4 py-2 rounded flex items-center gap-2"
             >
-                Cadastrar
+                Cadastrar <BsArrowRightCircleFill />
             </button>
         </form>
     );
