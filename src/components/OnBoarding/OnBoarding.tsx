@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
-function OnBoarding() {
+export default function OnBoarding() {
     const [nomeFantasia, setNomeFantasia] = useState('');
     const [razaoSocial, setRazaoSocial] = useState('');
     const [cnpj, setCnpj] = useState('');
@@ -94,5 +94,3 @@ function OnBoarding() {
         </form>
     );
 }
-
-export default OnBoarding;
