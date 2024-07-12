@@ -79,11 +79,12 @@ function OnBoarding() {
                 <input
                     value={senha} 
                     onChange={(e) => setSenha(e.target.value)}
-                    type="password"  // Mudei para 'password' para campo de senha
+                    type="password"
                     className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64" 
                     placeholder="Crie uma senha"
                 /> 
             </div>
+            
             <button 
                 type="submit" 
                 className="border border-transparent px-4 py-2 rounded-xl flex items-center gap-2 bg-custom-secundaria text-white"
