@@ -1,7 +1,7 @@
 
 "use client";
 import React, { useState } from "react";
-import InputMask from "react-input-mask";
+import InputMask from 'react-input-mask';
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { NextPage } from "next";
 
