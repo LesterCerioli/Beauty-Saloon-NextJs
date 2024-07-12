@@ -9,11 +9,11 @@ export const WorkerRegistration: NextPage = () =>{
     const [senhaAtendente, setSenhaAtendente] = useState('');
 
     return (
-        <main className="flex justify-center h-screen items-center bg-custom-secundaria">
-            <form className="flex flex-col justify-center items-center bg-custom-principal w-72 h-auto py-8 gap-3 rounded-xl">
-                <h1 className="text-custom-secundaria text-xl">Registrar Atendente</h1>
+        <main className="flex justify-center h-screen items-center bg-color-secundaria">
+            <form className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-8 gap-3 rounded-xl">
+                <h1 className="text-color-secundaria text-xl">Registrar Atendente</h1>
                 
-                <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
+                <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                     <label className="w-64">Nome:</label>
                     <input
                         value={nomeAtendente} 
@@ -24,7 +24,7 @@ export const WorkerRegistration: NextPage = () =>{
                     />
                 </div>
 
-                <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
+                <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                     <label className="w-64">Email:</label>
                     <input
                         value={emailAtendente} 
@@ -35,7 +35,7 @@ export const WorkerRegistration: NextPage = () =>{
                     />
                 </div>
 
-                <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
+                <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                     <label className="w-64">Senha:</label>
                     <input
                         value={senhaAtendente} 
@@ -48,7 +48,7 @@ export const WorkerRegistration: NextPage = () =>{
                 
                 <button 
                     type="submit" 
-                    className="border border-transparent px-4 py-2 rounded-xl flex items-center gap-2 bg-custom-secundaria text-white"
+                    className="border border-transparent px-4 py-2 rounded-xl flex items-center gap-2 bg-color-secundaria text-white"
                 >
                     Cadastrar <BsArrowRightCircleFill />
                 </button>
