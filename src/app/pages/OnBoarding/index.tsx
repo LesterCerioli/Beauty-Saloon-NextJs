@@ -16,6 +16,7 @@ export const OnBoarding: NextPage = () => {
     return (
         <main className="flex justify-center h-screen items-center bg-custom-secundaria">
             <form className="flex flex-col justify-center items-center bg-custom-principal w-72 h-auto py-8 gap-3 rounded-xl">
+                <h1 className="text-custom-secundaria text-xl">Cadastrar Empresa</h1>     
                 <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
                     <label className="w-64">Nome fantasia da empresa:</label>
                     <input 
