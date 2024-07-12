@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { BsArrowRightCircleFill } from "react-icons/bs";
+import { NextPage } from "next";
 
-export default function OnBoarding() {
+export const OnBoarding: NextPage = () => {
     const [nomeFantasia, setNomeFantasia] = useState('');
     const [razaoSocial, setRazaoSocial] = useState('');
     const [cnpj, setCnpj] = useState('');
