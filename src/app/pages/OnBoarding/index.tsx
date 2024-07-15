@@ -14,6 +14,8 @@ export const OnBoarding: NextPage = () => {
     const [senha, setSenha] = useState('');
     const [localizacao, setLocalizacao] = useState("");
     const [localizacaoNumero, setLocalizacaoNumero] = useState("");
+    const [localizacaoCidade, setLocalizacaoCidade] = useState("");
+    const [localizacaoEstado, setLocalizacaoEstado] = useState("");
 
     return (
         <main className="flex justify-center h-screen items-center bg-custom-secundaria">
@@ -70,6 +72,29 @@ export const OnBoarding: NextPage = () => {
                         placeholder="N.º" 
                         value={localizacaoNumero} 
                         onChange={(e) => setLocalizacaoNumero(e.target.value)}
+                        className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-20"
+                    />
+                    </div>
+                
+                </div>
+
+                <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
+                    <label className="w-64">Estado e Cidade:</label>
+                    <div className="flex items-center gap-1">
+                    <input 
+                        type="text" 
+                        placeholder="Insira a cidade" 
+                        value={localizacaoCidade} 
+                        onChange={(e) => setLocalizacaoCidade(e.target.value)}
+                        className="w-44 px-2 py-1 rounded-xl transition-all duration-500 focus:w-52"
+                    />
+                    <span>-</span>
+                    <InputMask 
+                        mask="aa"
+                        type="text" 
+                        placeholder="Estado" 
+                        value={localizacaoEstado} 
+                        onChange={(e) => setLocalizacaoEstado(e.target.value)}
                         className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-20"
                     />
                     </div>
