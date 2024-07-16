@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { GeoLocation } from "./pages/GeoLocation";
+import { Home } from "./pages/home";
 
-export default function Home() {
+export default function app() {
   return (
-    <GeoLocation/>  
+    <>
+      <Home />
+    </>
   );
 }
