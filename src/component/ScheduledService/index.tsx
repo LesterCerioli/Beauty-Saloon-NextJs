@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiFillSchedule } from "react-icons/ai";
 import InputMask from "react-input-mask";
 
-export const ScheduledService: NextPage = () =>{
+export const ScheduledService = () =>{
     
     const [nomeCliente, setNomeCliente] = useState("");
     const [telefoneCliente, setTelefoneCliente] = useState("");
