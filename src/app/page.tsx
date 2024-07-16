@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { WorkerRegistration } from "./pages/WorkerRegistration";
-import { ScheduledService } from "./pages/ScheduledService";
+import { ScheduledService } from "../component/ScheduledService";
 
 export default function Home() {
   return (
