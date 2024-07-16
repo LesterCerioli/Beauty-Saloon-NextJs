@@ -5,7 +5,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import image from "../../assets/placeholder_image.png";
 import { ServiceButton } from "@/components/ServiceButton";
 
-import { serviceList } from "../../constants/serviceConstants";
+import { serviceList } from "@/constants/serviceConstants";
 
 interface Servico{
     id: number;
@@ -40,7 +40,7 @@ export const Home: NextPage = () => {
                     {
                         serviceList.map(({id, title, img, link}: Servico) => {
                             return (
-                                <ServiceButton key={id} id={id} title={title} img={img} link={link}/>
+                                <ServiceButton key={id} id={id} img={img} title={title} link={link} />
                             )
                         })
                     }

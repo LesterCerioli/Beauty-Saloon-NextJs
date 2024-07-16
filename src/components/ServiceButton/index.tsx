@@ -8,10 +8,11 @@ interface ServiceButtonProps{
 export function ServiceButton({ id, title, img, link }: ServiceButtonProps){
     return (
         <div key={id} className="flex flex-col items-center">
-            <button className="w-16 h-16 rounded-full bg-[#E1F5FA] text-btn-primary-color">
+            <button className="flex items-center justify-center w-16 h-16 rounded-full bg-[#E1F5FA] text-btn-primary-color]
+                hover:border-2 border-solid border-btn-primary-color">
                 <img src={img} alt="" />
             </button>
-        <p className="mt-2 text-sm font-semibold text-btn-primary-color">Serviço</p>
+        <p className="mt-2 text-sm font-semibold text-btn-primary-color">{title}</p>
     </div>
     );
 }
