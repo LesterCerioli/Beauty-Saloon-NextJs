@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import InputMask from 'react-input-mask';
@@ -12,14 +11,15 @@ export const OnBoarding: NextPage = () => {
     const [tipoAtendimento, setTipoAtendimento] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [localizacao, setLocalizacao] = useState("");
+    const [localizacaoBairro, setLocalizacaoBairro] = useState("");
+    const [localizacaoRua, setLocalizacaoRua] = useState("");
     const [localizacaoNumero, setLocalizacaoNumero] = useState("");
     const [localizacaoCidade, setLocalizacaoCidade] = useState("");
     const [localizacaoEstado, setLocalizacaoEstado] = useState("");
 
     return (
-        <main className="flex justify-center h-screen items-center bg-custom-secundaria">
-            <form className="flex flex-col justify-center items-center bg-custom-principal w-72 h-auto py-8 gap-3 rounded-xl">
+        <main className="flex justify-center items-center h-screen bg-custom-secundaria overflow-auto pt-48 pb-10">
+            <form className="flex flex-col justify-center items-center bg-custom-principal w-72 h-auto py-4 gap-3 rounded-xl">
                 <h1 className="text-custom-secundaria text-xl">Cadastrar Empresa</h1>     
                 <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
                     <label className="w-64">Nome fantasia da empresa:</label>
@@ -58,12 +58,21 @@ export const OnBoarding: NextPage = () => {
 
                 <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
                     <label className="w-64">Localização do salão:</label>
+                    
+                    <input 
+                        type="text" 
+                        placeholder="Insira o bairro" 
+                        value={localizacaoBairro} 
+                        onChange={(e) => setLocalizacaoBairro(e.target.value)}
+                        className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
+                    />
+
                     <div className="flex items-center gap-1">
                     <input 
                         type="text" 
                         placeholder="Insira a rua" 
-                        value={localizacao} 
-                        onChange={(e) => setLocalizacao(e.target.value)}
+                        value={localizacaoRua} 
+                        onChange={(e) => setLocalizacaoRua(e.target.value)}
                         className="w-44 px-2 py-1 rounded-xl transition-all duration-500 focus:w-52"
                     />
                     <span>-</span>
@@ -95,7 +104,7 @@ export const OnBoarding: NextPage = () => {
                         placeholder="Estado" 
                         value={localizacaoEstado} 
                         onChange={(e) => setLocalizacaoEstado(e.target.value)}
-                        className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-20"
+                        className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-14"
                     />
                     </div>
                 </div>
