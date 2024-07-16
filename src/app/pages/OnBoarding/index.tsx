@@ -16,6 +16,7 @@ export const OnBoarding: NextPage = () => {
     const [localizacaoNumero, setLocalizacaoNumero] = useState("");
     const [localizacaoCidade, setLocalizacaoCidade] = useState("");
     const [localizacaoEstado, setLocalizacaoEstado] = useState("");
+    const [localizacaoComplemento, setLocalizacaoComplemento] = useState("");
 
     return (
         <main className="flex justify-center items-center h-screen bg-custom-secundaria overflow-auto pt-48 pb-10">
@@ -57,24 +58,17 @@ export const OnBoarding: NextPage = () => {
                 </div>
 
                 <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
-                    <label className="w-64">Localização do salão:</label>
-                    
-                    <input 
-                        type="text" 
-                        placeholder="Insira o bairro" 
-                        value={localizacaoBairro} 
-                        onChange={(e) => setLocalizacaoBairro(e.target.value)}
-                        className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
-                    />
+                    <label className="w-64">Endereço do salão:</label>
 
                     <div className="flex items-center gap-1">
                     <input 
                         type="text" 
-                        placeholder="Insira a rua" 
+                        placeholder="Insira a Avenida/Estrada/Rua" 
                         value={localizacaoRua} 
                         onChange={(e) => setLocalizacaoRua(e.target.value)}
                         className="w-44 px-2 py-1 rounded-xl transition-all duration-500 focus:w-52"
                     />
+
                     <span>-</span>
                     <input 
                         type="text" 
@@ -84,11 +78,23 @@ export const OnBoarding: NextPage = () => {
                         className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-20"
                     />
                     </div>
-                
-                </div>
 
-                <div className="flex flex-col mb-2 gap-1 text-custom-secundaria">
-                    <label className="w-64">Estado e Cidade:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Insira o complemento" 
+                        value={localizacaoComplemento} 
+                        onChange={(e) => setLocalizacaoComplemento(e.target.value)}
+                        className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
+                    />
+                
+                    <input 
+                        type="text" 
+                        placeholder="Insira o bairro" 
+                        value={localizacaoBairro} 
+                        onChange={(e) => setLocalizacaoBairro(e.target.value)}
+                        className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
+                    />
+
                     <div className="flex items-center gap-1">
                     <input 
                         type="text" 
