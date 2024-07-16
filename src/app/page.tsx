@@ -3,6 +3,6 @@ import { GeoLocation } from "./pages/GeoLocation";
 
 export default function Home() {
   return (
-  <GeoLocation/>  
+    <GeoLocation/>  
   );
 }

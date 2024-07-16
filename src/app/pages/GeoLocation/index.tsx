@@ -6,6 +6,7 @@ import { fetchSaloes, Salao } from  "../../../apiteste"
 import { TiScissorsOutline } from "react-icons/ti";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { SiGooglemaps } from "react-icons/si";
+import { HeaderLocation } from "@/app/components/Location-DropDown";
 
 export const GeoLocation: NextPage = () =>{
     const [saloes,  setSaloes] = useState<Salao[]>([]);
@@ -25,6 +26,8 @@ export const GeoLocation: NextPage = () =>{
 
     return (
         <main className="flex flex-col h-screen items-center bg-color-secundaria overflow-auto gap-5 py-8">
+            <HeaderLocation/>
+            
             {saloes.map((salao, index) => (
                 <div key={index} className="flex flex-col justify-center bg-color-principal w-80 h-auto px-8 py-4 gap-2 rounded-xl">
                     <h1 className="text-xl text-gray-500 flex items-center gap-2 border-b-color-secundaria border-b-2">{salao.nomeFantasia}<TiScissorsOutline /> </h1>
