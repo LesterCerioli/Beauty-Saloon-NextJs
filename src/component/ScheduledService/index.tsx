@@ -8,7 +8,7 @@ export const ScheduledService = () =>{
     
     const [nomeCliente, setNomeCliente] = useState("");
     const [telefoneCliente, setTelefoneCliente] = useState("");
-    const [serviçoCliente, setServiçoCliente] = useState("");
+    const [servicoCliente, setServicoCliente] = useState("");
     const [diaCliente, setDiaCliente] = useState("");
     const [horaCliente, setHoraCliente] = useState("");
 
@@ -40,8 +40,8 @@ export const ScheduledService = () =>{
                 <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                     <label className="w-64">Serviço que deseja:</label>
                     <input
-                        value={serviçoCliente} 
-                        onChange={(e) => setServiçoCliente(e.target.value)}
+                        value={servicoCliente} 
+                        onChange={(e) => setServicoCliente(e.target.value)}
                         type="text"
                         className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64" 
                         placeholder="Insira o serviço que deseja"
