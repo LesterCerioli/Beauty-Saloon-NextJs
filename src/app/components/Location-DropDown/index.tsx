@@ -2,23 +2,28 @@ import React, { useState, useEffect } from 'react';
 
 interface Estado {
     id: number;
-    shortName: string;
+    sigla: string;
 }
 
 interface Cidade {
     id: number;
-    name: string;
+    nome: string;
 }
 
-interface Bairro {
+{/*interface Bairro {
     id: number;
     name: string;
+}*/}
+
+interface HeaderLocationProps{
+    onEstadoChange: (estado: string) => void;
+    onCidadeChange: (cidade: string) => void;
 }
 
-export const HeaderLocation = () => {
+export const HeaderLocation: React.FC<HeaderLocationProps> = ({onEstadoChange, onCidadeChange}) => {
     const [estados, setEstados] = useState<Estado[]>([]);
     const [cidades, setCidades] = useState<Cidade[]>([]);
-    const [bairros, setBairros] = useState<Bairro[]>([]);
+    // const [bairros, setBairros] = useState<Bairro[]>([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState('');
     const [cidadeSelecionada, setCidadeSelecionada] = useState('');
 
@@ -35,46 +40,64 @@ export const HeaderLocation = () => {
                 .then(res => res.json())
                 .then(data => setCidades(data))
                 .catch(error => console.error('Erro ao carregar cidades:', error));
+        } else {
+            setCidades([]);
+            // setBairros([]);
         }
     }, [estadoSelecionado]);
 
-    useEffect(() => {
+    {/*useEffect(() => {
         if (cidadeSelecionada) {
-            fetch(`https://api.brasilaberto.com/v1/districts-by-ibge-code/${cidadeSelecionada}`)
+            fetch(`https://brasilapi.com.br/api/bairros/v1/${cidadeSelecionada}`)
                 .then(res => res.json())
                 .then(data => setBairros(data))
                 .catch(error => console.error('Erro ao carregar bairros:', error));
+        } else {
+            setBairros([]);
         }
-    }, [cidadeSelecionada]);
+    }, [cidadeSelecionada]);*/}
+
+    const handleEstadoChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const estado = e.target.value;
+        setEstadoSelecionado(estado);
+        setCidadeSelecionada('');
+        onEstadoChange(estado);
+    }
+
+    const handleCidadeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const cidade = e.target.value;
+        setCidadeSelecionada(cidade);
+        onCidadeChange(cidade);
+    };
 
     return (
-        <div>
-            <select onChange={e => setEstadoSelecionado(e.target.value)}>
-                <option>Selecione um estado</option>
+        <div className=''>
+            <select onChange={handleEstadoChange} value={estadoSelecionado}>
+                <option disabled value={''}>Selecione um estado</option>
                 {estados.map(estado => (
-                    <option key={estado.id} value={estado.id}>
-                        {estado.shortName}
+                    <option key={estado.id} value={estado.sigla}>
+                        {estado.sigla}
                     </option>
                 ))}
             </select>
 
-            <select onChange={e => setCidadeSelecionada(e.target.value)}>
-                <option>Selecione uma cidade</option>
+            <select onChange={handleCidadeChange} value={cidadeSelecionada}>
+                <option disabled value={''}>Selecione uma cidade</option>
                 {cidades.map(cidade => (
-                    <option key={cidade.id} value={cidade.id}>
-                        {cidade.name}
+                    <option key={cidade.id} value={cidade.nome}>
+                        {cidade.nome}
                     </option>
                 ))}
             </select>
 
-            <select>
-                <option>Selecione um bairro</option>
+            {/* <select>
+                <option value="">Selecione um bairro</option>
                 {bairros.map(bairro => (
                     <option key={bairro.id} value={bairro.id}>
                         {bairro.name}
                     </option>
                 ))}
-            </select>
+            </select> */}
         </div>
     );
 }
