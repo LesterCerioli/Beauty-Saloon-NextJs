@@ -71,9 +71,9 @@ export const HeaderLocation: React.FC<HeaderLocationProps> = ({onEstadoChange, o
     };
 
     return (
-        <div className=''>
-            <select onChange={handleEstadoChange} value={estadoSelecionado}>
-                <option disabled value={''}>Selecione um estado</option>
+        <div className='flex gap-1 w-auto flex-wrap justify-center text-lg text-black'>
+            <select onChange={handleEstadoChange} value={estadoSelecionado} className='rounded-xl py-1'>
+                <option disabled value={''}>Selecione o estado</option>
                 {estados.map(estado => (
                     <option key={estado.id} value={estado.sigla}>
                         {estado.sigla}
@@ -81,8 +81,8 @@ export const HeaderLocation: React.FC<HeaderLocationProps> = ({onEstadoChange, o
                 ))}
             </select>
 
-            <select onChange={handleCidadeChange} value={cidadeSelecionada}>
-                <option disabled value={''}>Selecione uma cidade</option>
+            <select onChange={handleCidadeChange} value={cidadeSelecionada} className='rounded-xl'>
+                <option disabled value={''}>Selecione a cidade</option>
                 {cidades.map(cidade => (
                     <option key={cidade.id} value={cidade.nome}>
                         {cidade.nome}
