@@ -3,9 +3,10 @@ import Image from "next/image";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import image from "../../assets/placeholder_image.png";
-import { ServiceButton } from "@/components/ServiceButton";
+
 
 import { serviceList } from "@/constants/serviceConstants";
+import { ServiceButton } from "../components/ServiceButton";
 
 interface Servico{
     id: number;
