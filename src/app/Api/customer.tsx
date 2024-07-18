@@ -230,5 +230,5 @@ export interface Customer {
           resolve(customersData.customer);
         }, 500)
       })
-    } 
+    }
     
