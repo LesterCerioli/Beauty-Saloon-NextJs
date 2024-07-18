@@ -13,7 +13,7 @@ export interface Customer {
             id: 1,
             nome: "João Silva",
             data: "2023-07-20",
-            horario: "14:00",
+            horario: "14:00", 
             atendente: "Maria"
         },
         {
@@ -231,4 +231,4 @@ export interface Customer {
         }, 500)
       })
     } 
-  
+    

@@ -1,13 +1,14 @@
 "use client";
 import { fetchCustomer, Customer } from "@/app/Api/customer";
 import { NextPage } from "next";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa";
 
 export const ViewCustomer: NextPage = () => {
     const [customers, setCustomers] = useState<Customer[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const customersPerPage = 5;
+    const customersPerPage = 6; 
+    const topRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,10 +26,17 @@ export const ViewCustomer: NextPage = () => {
     const indexOfLastCustomer = currentPage * customersPerPage;
     const indexOfFirstCustomer = indexOfLastCustomer - customersPerPage;
     const currentCustomers = customers.slice(indexOfFirstCustomer, indexOfLastCustomer);
-    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber); 
+    if (topRef.current) {
+        topRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
 
+    
+    
+    
     return (
         <main className="flex flex-col h-screen items-center bg-color-secundaria overflow-auto gap-5 py-8">
+            <div ref={topRef}></div>
             {currentCustomers.map((customer, index) => (
                 <section key={index} className="flex flex-col justify-center bg-color-principal w-80 h-auto px-3 py-4 gap-10 rounded-xl">
                     <h3 className="text-gray-500">Nome do cliente: {customer.nome}</h3>
@@ -37,9 +45,9 @@ export const ViewCustomer: NextPage = () => {
                         <div className="border border-transparent px-2 py-2 rounded-xl flex items-center gap-3 bg-color-secundaria text-white">
                             <FaRegCalendarAlt /> {customer.data}
                         </div>
-                        <button className="border border-transparent px-2 py-2 rounded-xl flex items-center gap-2.5 bg-color-secundaria text-white">
+                        <p className="border border-transparent px-2 py-2 rounded-xl flex items-center gap-2.5 bg-color-secundaria text-white">
                             <FaRegClock /> {customer.horario}
-                        </button>
+                        </p>
                     </div>
                 </section>
             ))}
