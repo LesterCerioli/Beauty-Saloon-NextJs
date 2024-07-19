@@ -4,39 +4,37 @@ import { AiFillSchedule } from "react-icons/ai";
 import InputMask from "react-input-mask";
 import { IoMdSend } from "react-icons/io";
 
+type Servico = {
+    nome: string;
+    checked: boolean;
+};
+
 export const ScheduledService = () => {
     const [nomeCliente, setNomeCliente] = useState("");
     const [telefoneCliente, setTelefoneCliente] = useState("");
     const [diaCliente, setDiaCliente] = useState("");
     const [horaCliente, setHoraCliente] = useState("");
-    const [servicos, setServicos] = useState({
-        cabelo: false,
-        tintura: false,
-        maniPedicure: false,
-        sobrancelha: false,
-        unhas: false,
-        depilacao: false,
-        decPelos: false,
-    });
+    const [servicos, setServicos] = useState<Servico[]>([
+        {nome:"cabelo" , checked: false},
+        {nome:"tintura" , checked: false},
+        {nome:"maniPedicure" , checked: false},
+        {nome:"sobrancelha" , checked: false},
+        {nome:"unhas" , checked: false},
+        {nome:"depilacao" , checked: false},
+        {nome:"decPelos" , checked: false},
+    ]);
     const [outroServico, setOutroServico] = useState("");
     const [outrosServicos, setOutrosServicos] = useState<{ nome: string; checked: boolean }[]>([]);
 
-    useEffect(() => {
-        const salvarServicos = localStorage.getItem('outrosServicos');
-        if(salvarServicos){
-            setOutrosServicos(JSON.parse(salvarServicos))
-        }
-    }, []);
+    const armazenar = (servico: Servico) => {
+        localStorage.setItem(servico.nome, JSON.stringify(servico.checked));
+    }
 
-    useEffect(() => {
-        localStorage.setItem("outrosServicos", JSON.stringify(outrosServicos));
-    }, [outrosServicos])
 
-    const handleServicoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setServicos({
-            ...servicos,
-            [event.target.name]: event.target.checked,
-        });
+    const handleServicoChange = (index: number) => {
+        const novosServicos = [...servicos];
+        novosServicos[index].checked = !novosServicos[index].checked;
+        setServicos(novosServicos);
     };
 
     const handleOutroServicoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,7 +43,8 @@ export const ScheduledService = () => {
 
     const handleAddOutroServicoClick = () => {
         if (outroServico.trim() !== "" && window.confirm(`Deseja adicionar o serviço "${outroServico}" à lista de serviços?`)) {
-            setOutrosServicos([...outrosServicos, { nome: outroServico, checked: false }]);
+            const novoServico = { nome: outroServico, checked: false };
+            setOutrosServicos([...outrosServicos, novoServico]);
             setOutroServico("");
         }
     };
@@ -56,9 +55,17 @@ export const ScheduledService = () => {
         setOutrosServicos(novosServicos);
     };
 
+    const armazenarSelecionados = () => {
+        [...servicos, ...outrosServicos].forEach(servico => {
+            if(servico.checked){
+                armazenar(servico)
+            }
+        });
+    };
+
     const handleAgendarClick = (event: React.FormEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        // Lógica para agendar atendimento
+        armazenarSelecionados();
     };
 
     return (
@@ -88,34 +95,16 @@ export const ScheduledService = () => {
 
             <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                 <label className="w-64">Serviço que deseja:</label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="cabelo" checked={servicos.cabelo} onChange={handleServicoChange} />
-                    Corte
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="tintura" checked={servicos.tintura} onChange={handleServicoChange} />
-                    Tintura
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="maniPedicure" checked={servicos.maniPedicure} onChange={handleServicoChange} />
-                    Manicure / Pedicure
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="sobrancelha" checked={servicos.sobrancelha} onChange={handleServicoChange} />
-                    Sobrancelha
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="unhas" checked={servicos.unhas} onChange={handleServicoChange} />
-                    Unhas
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="depilacao" checked={servicos.depilacao} onChange={handleServicoChange} />
-                    Depilação
-                </label>
-                <label className="flex items-center gap-1">
-                    <input type="checkbox" name="decPelos" checked={servicos.decPelos} onChange={handleServicoChange} />
-                    Descoloração de pelos
-                </label>
+                {servicos.map((servico, index) => (
+                    <label key={index} className="flex items-center gap-1">
+                        <input
+                            type="checkbox"
+                            checked={servico.checked}
+                            onChange={() => handleServicoChange(index)}
+                        />
+                        {servico.nome}
+                    </label>
+                ))}
 
                 {outrosServicos.map((servico, index) => (
                     <label key={index} className="flex items-center gap-1">
