@@ -3,9 +3,9 @@ import Image from "next/image";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import image from "../../assets/placeholder_image.png";
-import { ServiceButton } from "@/components/ServiceButton";
 
 import { serviceList } from "@/constants/serviceConstants";
+import { ServiceButton } from "../components/ServiceButton";
 
 interface Servico{
     id: number;
@@ -14,21 +14,20 @@ interface Servico{
     link: string;
 }
 
-
 interface ServiceButtonData{
     data: Array<Servico>;
 }
 
-export const Home: NextPage = () => {
+const Home: NextPage = () => {
     return (
-        <main className="flex flex-col mt-6 p-4">
-            <header className="flex flex-1 flex-row justify-between">
+        <main className="flex flex-1 flex-col mt-6 p-4 last: pb-24">
+            <header className="flex flex-row justify-between h-fit">
                 <div>
                     <h1 className="text-[#111111] text-2xl font-bold">Olá, Placeholder</h1>
                     <span className="text-[#50555C] text-sm">Encontre o serviço que procura, e cuide de sí mesma!</span>
                 </div>
                 <button className="flex text-white items-center justify-center h-12 w-12 bg-btn-primary-color rounded-full">
-                    <FaMagnifyingGlass size={24} />
+                    <FaMagnifyingGlass size={24}></FaMagnifyingGlass>
                 </button>
             </header>
             
@@ -46,7 +45,8 @@ export const Home: NextPage = () => {
                     }
                 </div>
             </section>
-            
       </main>
     );
 }
+
+export default Home;

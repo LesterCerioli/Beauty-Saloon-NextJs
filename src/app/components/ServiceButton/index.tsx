@@ -12,7 +12,7 @@ export function ServiceButton({ id, title, img, link }: ServiceButtonProps){
                 hover:border-2 border-solid border-btn-primary-color">
                 <img src={img} alt="" />
             </button>
-        <p className="mt-2 text-sm font-semibold text-btn-primary-color">{title}</p>
+        <p className="mt-2 font-semibold text-[11px] text-btn-primary-color mobile-sm:text-sm">{title}</p>
     </div>
     );
 }
