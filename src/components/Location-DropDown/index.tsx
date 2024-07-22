@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-interface Estado {
-    id: number;
-    sigla: string;
-}
-
-interface Cidade {
-    id: number;
-    nome: string;
-}
-
-interface Bairro {
-    id: number;
-    name: string;
-}
-
 interface HeaderLocationProps {
+    estado: string;
+    cidade: string;
+    bairro: string;
     onEstadoChange: (estado: string) => void;
     onCidadeChange: (cidade: string) => void;
     onBairroChange: (bairro: string) => void;
@@ -286,12 +274,18 @@ const saloesData = {
     ]
 }
 
-export const HeaderLocation: React.FC<HeaderLocationProps> = ({ onEstadoChange, onCidadeChange, onBairroChange }) => {
+export const HeaderLocation: React.FC<HeaderLocationProps> = ({ estado, cidade, bairro, onEstadoChange, onCidadeChange, onBairroChange }) => {
     const [cidades, setCidades] = useState<string[]>([]);
     const [bairros, setBairros] = useState<string[]>([]);
-    const [estadoSelecionado, setEstadoSelecionado] = useState('');
-    const [cidadeSelecionada, setCidadeSelecionada] = useState('');
-    const [bairroSelecionado, setBairroSelecionado] = useState('');
+    const [estadoSelecionado, setEstadoSelecionado] = useState(estado);
+    const [cidadeSelecionada, setCidadeSelecionada] = useState(cidade);
+    const [bairroSelecionado, setBairroSelecionado] = useState(bairro);
+
+    useEffect(() => {
+        setEstadoSelecionado(estado);
+        setCidadeSelecionada(cidade);
+        setBairroSelecionado(bairro);
+    }, [estado, cidade, bairro]);
 
     useEffect(() => {
         if (estadoSelecionado) {
@@ -340,7 +334,7 @@ export const HeaderLocation: React.FC<HeaderLocationProps> = ({ onEstadoChange, 
 
     return (
         <div className='flex gap-1 flex-wrap justify-center text-lg text-black xl:gap-3'>
-            <select onChange={handleEstadoChange} value={estadoSelecionado} className='rounded-xl py-1 w-44'>
+            <select value={estadoSelecionado} onChange={handleEstadoChange} className='rounded-xl py-1 w-44'>
                 <option disabled value={''}>Selecione Estado</option>
                 {Array.from(new Set(saloesData.salons.map(salao => salao.localizacao.estado))).map((estado, index) => (
                     <option key={index} value={estado}>
@@ -349,7 +343,7 @@ export const HeaderLocation: React.FC<HeaderLocationProps> = ({ onEstadoChange, 
                 ))}
             </select>
 
-            <select onChange={handleCidadeChange} value={cidadeSelecionada} className='rounded-xl py-1 w-44'>
+            <select value={cidadeSelecionada} onChange={handleCidadeChange} className='rounded-xl py-1 w-44'>
                 <option disabled value={''}>Selecione Cidade</option>
                 {cidades.map((cidade, index) => (
                     <option key={index} value={cidade}>
@@ -358,7 +352,7 @@ export const HeaderLocation: React.FC<HeaderLocationProps> = ({ onEstadoChange, 
                 ))}
             </select>
 
-            <select onChange={handleBairroChange} value={bairroSelecionado} className='rounded-xl py-1 w-44'>
+            <select value={bairroSelecionado} onChange={handleBairroChange} className='rounded-xl py-1 w-44'>
                 <option disabled value={''}>Selecione Bairro</option>
                 {bairros.map((bairro, index) => (
                     <option key={index} value={bairro}>

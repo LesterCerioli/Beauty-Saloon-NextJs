@@ -59,6 +59,9 @@ export const GeoLocation: NextPage = () => {
                     <IoReloadCircle /> <p className="text-xl">Resetar busca</p>
                 </button>
                 <HeaderLocation
+                    estado={estadoSelecionado}
+                    cidade={cidadeSelecionada}
+                    bairro={bairroSelecionado}
                     onEstadoChange={(estado) => {
                         setEstadoSelecionado(estado);
                         setCidadeSelecionada('');
