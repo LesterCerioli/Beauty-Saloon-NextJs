@@ -1,19 +1,28 @@
-export interface Salao {
-    nomeFantasia: string;
-    razaoSocial: string;
-    cnpj: string;
-    localizacao: {
-        rua: string;
-        numero: string;
-        cidade: string;
-        estado: string;
-        bairro: string;
-    };
-    especializacao: string;
-  }
-  
-  const saloesData = {
-  "salons": [
+import React, { useState, useEffect } from 'react';
+
+interface Estado {
+    id: number;
+    sigla: string;
+}
+
+interface Cidade {
+    id: number;
+    nome: string;
+}
+
+interface Bairro {
+    id: number;
+    name: string;
+}
+
+interface HeaderLocationProps {
+    onEstadoChange: (estado: string) => void;
+    onCidadeChange: (cidade: string) => void;
+    onBairroChange: (bairro: string) => void;
+}
+
+const saloesData = {
+"salons": [
     {
         "nomeFantasia": "Salão Beleza Pura",
         "razaoSocial": "Beleza Pura Ltda",
@@ -274,13 +283,89 @@ export interface Salao {
         },
         "especializacao": "Salão Unissex"
     }
-  ]
+    ]
 }
-    
-    export const fetchSaloes = (): Promise<Salao[]> => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(saloesData.salons);
-        }, 500)
-      })
-    }
+
+export const HeaderLocation: React.FC<HeaderLocationProps> = ({ onEstadoChange, onCidadeChange, onBairroChange }) => {
+    const [cidades, setCidades] = useState<string[]>([]);
+    const [bairros, setBairros] = useState<string[]>([]);
+    const [estadoSelecionado, setEstadoSelecionado] = useState('');
+    const [cidadeSelecionada, setCidadeSelecionada] = useState('');
+    const [bairroSelecionado, setBairroSelecionado] = useState('');
+
+    useEffect(() => {
+        if (estadoSelecionado) {
+            const cidades = Array.from(new Set(saloesData.salons
+                .filter(salao => salao.localizacao.estado === estadoSelecionado)
+                .map(salao => salao.localizacao.cidade)));
+            setCidades(cidades);
+            setBairros([]);
+        } else {
+            setCidades([]);
+            setBairros([]);
+        }
+    }, [estadoSelecionado]);
+
+    useEffect(() => {
+        if (cidadeSelecionada) {
+            const bairros = Array.from(new Set(saloesData.salons
+                .filter(salao => salao.localizacao.cidade === cidadeSelecionada)
+                .map(salao => salao.localizacao.bairro)));
+            setBairros(bairros);
+        } else {
+            setBairros([]);
+        }
+    }, [cidadeSelecionada]);
+
+    const handleEstadoChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const estado = e.target.value;
+        setEstadoSelecionado(estado);
+        setCidadeSelecionada('');
+        setBairroSelecionado('');
+        onEstadoChange(estado);
+    };
+
+    const handleCidadeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const cidade = e.target.value;
+        setCidadeSelecionada(cidade);
+        setBairroSelecionado('');
+        onCidadeChange(cidade);
+    };
+
+    const handleBairroChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const bairro = e.target.value;
+        setBairroSelecionado(bairro);
+        onBairroChange(bairro);
+    };
+
+    return (
+        <div className='flex gap-1 flex-wrap justify-center text-lg text-black xl:gap-3'>
+            <select onChange={handleEstadoChange} value={estadoSelecionado} className='rounded-xl py-1 w-44'>
+                <option disabled value={''}>Selecione Estado</option>
+                {Array.from(new Set(saloesData.salons.map(salao => salao.localizacao.estado))).map((estado, index) => (
+                    <option key={index} value={estado}>
+                        {estado}
+                    </option>
+                ))}
+            </select>
+
+            <select onChange={handleCidadeChange} value={cidadeSelecionada} className='rounded-xl py-1 w-44'>
+                <option disabled value={''}>Selecione Cidade</option>
+                {cidades.map((cidade, index) => (
+                    <option key={index} value={cidade}>
+                        {cidade}
+                    </option>
+                ))}
+            </select>
+
+            <select onChange={handleBairroChange} value={bairroSelecionado} className='rounded-xl py-1 w-44'>
+                <option disabled value={''}>Selecione Bairro</option>
+                {bairros.map((bairro, index) => (
+                    <option key={index} value={bairro}>
+                        {bairro}
+                    </option>
+                ))}
+            </select>
+        </div>
+    );
+};
