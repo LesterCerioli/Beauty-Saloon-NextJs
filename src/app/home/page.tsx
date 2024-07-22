@@ -1,11 +1,18 @@
+"use client"
+
 import { NextPage } from "next";
 import Image from "next/image";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import Carousel from "react-multi-carousel";
+import 'react-multi-carousel/lib/styles.css';
 
 import image from "../../assets/placeholder_image.png";
 
 import { serviceList } from "@/constants/serviceConstants";
 import { ServiceButton } from "../components/ServiceButton";
+import Link from "next/link";
+import { responsive } from "@/constants/carouselSizeConstants";
+import { SaloonCardDetails } from "../components/SaloonCardDetails";
 
 interface Servico{
     id: number;
@@ -44,6 +51,46 @@ const Home: NextPage = () => {
                         })
                     }
                 </div>
+            </section>
+
+            <section className="mt-6">
+
+                <div className="flex items-center justify-between">
+                    <h5 className="font-bold">Salões em destaque</h5>
+                    <Link className="font-semibold text-sm text-btn-primary-color hover:underline decoration-1" href="#">Ver todos</Link>
+                </div>
+                
+                <Carousel
+                    additionalTransfrom={0}
+                    arrows
+                    centerMode={false}
+                    dotListClass=""
+                    draggable
+                    focusOnSelect={false}
+                    infinite
+                    itemClass=""
+                    keyBoardControl
+                    minimumTouchDrag={80}
+                    pauseOnHover
+                    renderArrowsWhenDisabled={false}
+                    renderButtonGroupOutside={false}
+                    renderDotsOutside={false}
+                    responsive={responsive}
+                    rewind={false}
+                    rewindWithAnimation={false}
+                    rtl={false}
+                    shouldResetAutoplay
+                    showDots={false}
+                    sliderClass=""
+                    slidesToSlide={1}
+                    swipeable
+                    >
+                        <SaloonCardDetails />
+                        <SaloonCardDetails />
+                        <SaloonCardDetails />
+                        <SaloonCardDetails />
+                </Carousel>
+
             </section>
       </main>
     );
