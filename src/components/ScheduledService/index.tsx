@@ -15,13 +15,13 @@ export const ScheduledService = () => {
     const [diaCliente, setDiaCliente] = useState("");
     const [horaCliente, setHoraCliente] = useState("");
     const [servicos, setServicos] = useState<Servico[]>([
-        {nome:"cabelo" , checked: false},
-        {nome:"tintura" , checked: false},
-        {nome:"maniPedicure" , checked: false},
+        {nome:"Cabelo" , checked: false},
+        {nome:"Tintura" , checked: false},
+        {nome:"Manicure/Pedicure" , checked: false},
         {nome:"sobrancelha" , checked: false},
-        {nome:"unhas" , checked: false},
-        {nome:"depilacao" , checked: false},
-        {nome:"decPelos" , checked: false},
+        {nome:"Unhas" , checked: false},
+        {nome:"Depilação" , checked: false},
+        {nome:"Descolorir Pelos" , checked: false},
     ]);
     const [outroServico, setOutroServico] = useState("");
     const [outrosServicos, setOutrosServicos] = useState<{ nome: string; checked: boolean }[]>([]);
@@ -63,13 +63,33 @@ export const ScheduledService = () => {
         });
     };
 
-    const handleAgendarClick = (event: React.FormEvent<HTMLButtonElement>) => {
+    const handleAgendarClick = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        armazenarSelecionados();
+
+        const form = document.querySelector("form") as HTMLFormElement;
+
+        if(form.reportValidity()){
+            armazenarSelecionados();
+
+            const servicosSelecionados = [...servicos, ...outrosServicos]
+            .filter(servico => servico.checked)
+            .map(servico => servico.nome)
+            .join(", ")
+    
+            alert(`
+            Verifique o atendimento:
+            Nome: ${nomeCliente}
+            Telefone: ${telefoneCliente}
+            Serviços que deseja: ${servicosSelecionados}
+            Dia: ${diaCliente}
+            Hora: ${horaCliente}    
+            `)
+            location.reload()
+        }
     };
 
     return (
-        <form className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-8 px-4 gap-3 rounded-xl">
+        <form onSubmit={handleAgendarClick} className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-8 px-4 gap-3 rounded-xl">
             <h1 className="text-color-secundaria text-xl">Marcar Atendimento</h1>
             <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                 <label className="w-64">Nome:</label>
@@ -79,6 +99,7 @@ export const ScheduledService = () => {
                     type="text"
                     className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
                     placeholder="Insira o nome"
+                    required
                 />
             </div>
 
@@ -90,6 +111,7 @@ export const ScheduledService = () => {
                     mask="(99)99999-9999"
                     className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
                     placeholder="Insira seu telefone"
+                    required
                 />
             </div>
 
@@ -143,6 +165,7 @@ export const ScheduledService = () => {
                     type="date"
                     className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
                     placeholder="Selecione o horário"
+                    required
                 />
             </div>
 
@@ -154,13 +177,13 @@ export const ScheduledService = () => {
                     type="time"
                     className="w-60 px-2 py-1 rounded-xl transition-all duration-500 focus:w-64"
                     placeholder="Selecione o horário"
+                    required
                 />
             </div>
 
             <button
                 type="submit"
                 className="border border-transparent px-4 py-2 rounded-xl flex items-center gap-2 bg-color-secundaria text-white"
-                onClick={handleAgendarClick}
             >
                 Agendar Atendimento <AiFillSchedule />
             </button>
