@@ -8,6 +8,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'mobile-sm': '375px',
+    },
     extend: {
       colors: {
         'btn-primary-color': '#156778',
