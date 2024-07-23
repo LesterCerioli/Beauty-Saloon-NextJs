@@ -13,6 +13,7 @@ import Link from "next/link";
 import { responsive } from "@/constants/carouselSizeConstants";
 import { SaloonCardDetails } from "../components/SaloonCardDetails";
 
+
 interface Servico{
     id: number;
     title: string;
@@ -35,6 +36,8 @@ const Home: NextPage = () => {
                     </button>
                 </div>
             </header>
+
+            
             
             <Image className="w-screen h-72 mt-6 rounded-lg" src={image} alt="" />
 
