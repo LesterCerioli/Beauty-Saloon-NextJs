@@ -25,29 +25,33 @@ export const ViewSchedules: NextPage = () => {
     return(
         <main className="flex justify-center h-screen bg-color-secundaria overflow-auto">
             <section className="flex flex-col items-center w-full text-sm py-4">
-                <h1 className="text-color-principal ">AGENDADOS</h1>
-                <div className="flex flex-col gap-4 bg-purple-300 p-3 rounded-md">
+                <h1 className="text-color-principal m-1">AGENDADOS</h1>
+                <div className="flex flex-col gap-4">
                     {confirmedCustomers.map(customer => (
-                        <div key={customer.id} className="bg-color-principal text-gray-700 flex flex-col gap-1 p-1 rounded-md">
-                        <p>Nome: {customer.nome}</p>
-                        <p>Data: {customer.data}</p>
-                        <p>Horário: {customer.horario}</p>
-                        <p>Atendende: {customer.atendente}</p>
-                        <p>Status: {customer.status ? "Agendado" : "Cancelado"}</p>
+                        <div key={customer.id} className="bg-green-500 p-1 rounded-md">
+                            <div className="bg-color-principal text-gray-700 flex flex-col gap-1 p-1 rounded-md">
+                            <p>Nome: {customer.nome}</p>
+                            <p>Data: {customer.data}</p>
+                            <p>Horário: {customer.horario}</p>
+                            <p>Atendende: {customer.atendente}</p>
+                            <p>Status: {customer.status ? "Agendado" : "Cancelado"}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
             </section>
             <section className="flex flex-col items-center w-full text-sm py-4">
-                <h1 className="text-color-principal ">CANCELADOS</h1>
-                <div className="flex flex-col gap-4 bg-purple-300 p-3 rounded-md">
+                <h1 className="text-color-principal m-1">CANCELADOS</h1>
+                <div className="flex flex-col gap-4">
                     {cancelCustomers.map(customer => (
-                        <div key={customer.id} className="bg-color-principal text-gray-700 flex flex-col gap-1 p-1 rounded-md">
-                        <p>Name: {customer.nome}</p>
-                        <p>Date: {customer.data}</p>
-                        <p>Time: {customer.horario}</p>
-                        <p>Atendant: {customer.atendente}</p>
-                        <p>Status: {customer.status ? "Agendado" : "Cancelado"}</p>
+                        <div key={customer.id} className="bg-red-500 p-1 rounded-md">
+                            <div  className="bg-color-principal text-gray-700 flex flex-col gap-1 p-1 rounded-md">
+                            <p>Nome: {customer.nome}</p>
+                            <p>Data: {customer.data}</p>
+                            <p>Horário: {customer.horario}</p>
+                            <p>Atendende: {customer.atendente}</p>
+                            <p>Status: {customer.status ? "Agendado" : "Cancelado"}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
