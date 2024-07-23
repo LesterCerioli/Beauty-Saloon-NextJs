@@ -70,6 +70,7 @@ export const GeoLocation: NextPage = () => {
                     }}
                     onBairroChange={setBairroSelecionado}
                 />
+                
                 <button onClick={reloadPage} className="text-3xl bg-color-principal rounded-xl w-auto text-color-secundaria flex items-center">
                     <IoReloadCircle /> <p className="text-xl">Resetar busca</p>
                 </button>
