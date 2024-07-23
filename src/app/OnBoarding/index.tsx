@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputMask from 'react-input-mask';
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { NextPage } from "next";
+import axios from "axios";
 
 export const OnBoarding: NextPage = () => {
     const [nomeFantasia, setNomeFantasia] = useState('');
@@ -17,6 +18,34 @@ export const OnBoarding: NextPage = () => {
     const [localizacaoCidade, setLocalizacaoCidade] = useState("");
     const [localizacaoEstado, setLocalizacaoEstado] = useState("");
     const [localizacaoComplemento, setLocalizacaoComplemento] = useState("");
+
+    const [estados, setEstados] = useState<any[]>([]);
+    const [cidades, setCidades] = useState<any[]>([]);
+    
+    useEffect(() => {
+        async function fetchEstados() {
+            try {
+                const response = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
+                setEstados(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar estados:", error);
+            }
+        }
+        fetchEstados();
+    }, []);
+
+    useEffect(() => {
+        async function fetchCidades(estado: string) {
+            if (!estado) return;
+            try {
+                const response = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios`);
+                setCidades(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar cidades:", error);
+            }
+        }
+        fetchCidades(localizacaoEstado);
+    }, [localizacaoEstado]);
 
     return (
         <main className="flex justify-center items-center h-screen bg-color-secundaria overflow-auto pt-48 pb-10">
@@ -96,22 +125,27 @@ export const OnBoarding: NextPage = () => {
                     />
 
                     <div className="flex items-center gap-1">
-                    <input 
-                        type="text" 
-                        placeholder="Insira a cidade" 
-                        value={localizacaoCidade} 
-                        onChange={(e) => setLocalizacaoCidade(e.target.value)}
-                        className="w-44 px-2 py-1 rounded-xl transition-all duration-500 focus:w-52"
-                    />
-                    <span>-</span>
-                    <InputMask 
-                        mask="aa"
-                        type="text" 
-                        placeholder="Estado" 
+                    <select 
                         value={localizacaoEstado} 
-                        onChange={(e) => setLocalizacaoEstado(e.target.value)}
-                        className="w-12 px-2 py-1 rounded-xl transition-all duration-500 focus:w-14"
-                    />
+                        onChange={(e) => setLocalizacaoEstado(e.target.value)} 
+                        className="w-12 py-1 rounded-xl transition-all duration-500 focus:w-14 text-gray-400"
+                    >
+                        <option value="">UF</option>
+                        {estados.map((estado: any) => (
+                            <option key={estado.sigla} value={estado.sigla}>{estado.sigla}</option>
+                        ))}
+                    </select>
+                    <span>-</span>
+                    <select 
+                        value={localizacaoCidade} 
+                        onChange={(e) => setLocalizacaoCidade(e.target.value)} 
+                        className="w-44 py-1 rounded-xl transition-all duration-500 focus:w-52 text-gray-400"
+                    >
+                        <option value="">Selecione a cidade</option>
+                        {cidades.map((cidade: any) => (
+                            <option key={cidade.id} value={cidade.nome}>{cidade.nome}</option>
+                        ))}
+                    </select>
                     </div>
                 </div>
 
