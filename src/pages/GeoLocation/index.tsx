@@ -55,9 +55,6 @@ export const GeoLocation: NextPage = () => {
     return (
         <main className="flex flex-col h-screen items-center bg-color-secundaria overflow-auto gap-5 py-8 xl:flex-row xl:items-start">
             <div className="flex flex-col gap-2 xl:gap-8 px-4 w-96">
-                <button onClick={reloadPage} className="text-3xl bg-color-principal rounded-xl w-auto text-color-secundaria flex items-center">
-                    <IoReloadCircle /> <p className="text-xl">Resetar busca</p>
-                </button>
                 <HeaderLocation
                     estado={estadoSelecionado}
                     cidade={cidadeSelecionada}
@@ -73,6 +70,9 @@ export const GeoLocation: NextPage = () => {
                     }}
                     onBairroChange={setBairroSelecionado}
                 />
+                <button onClick={reloadPage} className="text-3xl bg-color-principal rounded-xl w-auto text-color-secundaria flex items-center">
+                    <IoReloadCircle /> <p className="text-xl">Resetar busca</p>
+                </button>
             </div>
             <div className="flex flex-col gap-6 xl:flex-row flex-wrap justify-center">
                 {filteredSaloes.length === 0 ? (
