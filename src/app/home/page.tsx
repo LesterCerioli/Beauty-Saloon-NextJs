@@ -5,13 +5,15 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 
-import image from "../../assets/example_saloon.jpeg";
+import banner from "@/assets/example_saloon.jpeg"
+import { images } from "@/constants/carouselPlaceholderConstants";
 
 import { serviceList } from "@/constants/serviceConstants";
 import { ServiceButton } from "../components/ServiceButton";
 import Link from "next/link";
 import { responsive } from "@/constants/carouselSizeConstants";
 import { SaloonCardDetails } from "../components/SaloonCardDetails";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Servico{
     id: number;
@@ -20,6 +22,10 @@ interface Servico{
     link: string;
 }
 
+interface ImageProps{
+    id: number,
+    path: string | StaticImport,
+}
 
 const Home: NextPage = () => {
     return (
@@ -36,7 +42,7 @@ const Home: NextPage = () => {
                 </div>
             </header>
             
-            <Image className="w-screen h-72 mt-6 rounded-lg" src={image} alt="" />
+            <Image className="w-screen h-72 mt-6 rounded-lg" src={banner} alt="" />
 
             <section className="mt-6 font-bold text-base">
                 <h5 className="text-[#111111]">O que você está procurando?</h5>
@@ -65,7 +71,7 @@ const Home: NextPage = () => {
                     dotListClass=""
                     draggable
                     focusOnSelect={false}
-                    infinite
+                    infinite={false}
                     itemClass=""
                     keyBoardControl
                     minimumTouchDrag={80}
@@ -83,10 +89,11 @@ const Home: NextPage = () => {
                     slidesToSlide={1}
                     swipeable
                     >
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
+                        {images.map((image) => {
+                            return (
+                                <SaloonCardDetails key={image.id} img={image.img} />
+                            );
+                        })}
                 </Carousel>
 
             </section>
