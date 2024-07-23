@@ -1,21 +1,21 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
-import mock from "@/assets/mock_card_display.png"
+import mock from "@/assets/interior-saloon-example.jpg"
 import { CiHeart } from "react-icons/ci";
 
 export function SaloonCardDetails(){
     return (
         <section className="w-fit mt-6">
             <div className="relative">
-                <Image className="rounded-xl" src={mock} alt="" />
+                <Image className="h-40 w-52 rounded-xl" src={mock} alt="" />
                 <button className="absolute top-4 right-4 w-8 h-8 bg-[#FEF1F2] text-red-500 rounded-full flex items-center justify-center">
                     <CiHeart size={30} />
                 </button>
             </div>
             <div className="flex gap-2 mt-4 text-btn-primary-color text-xs">
-                <span>tags aqui</span>
-                <span>tag2</span>
-                <span>tag3</span>
+                <span>cabelo</span>
+                <span>unhas</span>
+                <span>maquiagem</span>
             </div>
             <div>
                 <h5 className="font-bold">Salão de Beleza</h5>
