@@ -14,6 +14,7 @@ import { responsive } from "@/constants/carouselSizeConstants";
 import { SaloonCardDetails } from "../components/SaloonCardDetails";
 
 
+
 interface Servico{
     id: number;
     title: string;
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
                     </button>
                 </div>
             </header>
-
+            
             
             
             <Image className="w-screen h-72 mt-6 rounded-lg" src={image} alt="" />
@@ -45,20 +46,24 @@ const Home: NextPage = () => {
                 <h5 className="text-[#111111]">O que você está procurando?</h5>
                 <div className=" mt-6 grid gap-4 grid-cols-4">
                     {
+                        
                         serviceList.map(({id, title, img, link}: Servico) => {
                             return (
                                 <ServiceButton key={id} id={id} img={img} title={title} link={link} />
                             )
                         })
                     }
+                    
                 </div>
             </section>
 
             <section className="mt-6">
 
                 <div className="flex items-center justify-between">
+                    
                     <h5 className="font-bold">Salões em destaque</h5>
                     <Link className="font-semibold text-sm text-btn-primary-color hover:underline decoration-1" href="#">Ver todos</Link>
+                    
                 </div>
                 
                 <Carousel
@@ -93,6 +98,7 @@ const Home: NextPage = () => {
                 </Carousel>
 
             </section>
+            
       </main>
     );
 }
