@@ -46,6 +46,7 @@ export const ViewSchedules: NextPage = () => {
                     ))}
                 </div>
             </section>
+            
             <section className="flex flex-col items-center w-full text-sm py-4">
                 <h1 className="text-color-principal m-1">CANCELADOS</h1>
                 <div className="flex flex-col gap-4">
