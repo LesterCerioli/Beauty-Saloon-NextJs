@@ -15,7 +15,7 @@ export interface Customer {
             data: "2023-07-20",
             horario: "14:00", 
             atendente: "Maria",
-            status: true
+            status: false
         },
         {
             id: 2,
@@ -23,7 +23,7 @@ export interface Customer {
             data: "2023-07-21",
             horario: "10:00",
             atendente: "Carlos",
-            status: true
+            status: false
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ export interface Customer {
             data: "2023-07-22",
             horario: "11:00",
             atendente: "Fernanda",
-            status: true
+            status: false
         },
         {
             id: 4,
@@ -39,7 +39,7 @@ export interface Customer {
             data: "2023-07-23",
             horario: "09:00",
             atendente: "Roberto",
-            status: true
+            status: false
         },
         {
             id: 5,
@@ -47,7 +47,7 @@ export interface Customer {
             data: "2023-07-24",
             horario: "15:00",
             atendente: "Juliana",
-            status: true
+            status: false
         },
         {
             id: 6,
@@ -55,7 +55,7 @@ export interface Customer {
             data: "2023-07-25",
             horario: "16:00",
             atendente: "Ricardo",
-            status: true
+            status: false
         },
         {
             id: 7,
@@ -63,7 +63,7 @@ export interface Customer {
             data: "2023-07-26",
             horario: "10:30",
             atendente: "Bianca",
-            status: true
+            status: false
         },
         {
             id: 8,
@@ -239,7 +239,7 @@ export interface Customer {
             data: "2023-08-19",
             horario: "11:30",
             atendente: "Marcelo",
-            status: true
+            status: false
         },
         {
             id: 30,
@@ -247,7 +247,7 @@ export interface Customer {
             data: "2023-08-20",
             horario: "09:30",
             atendente: "Sofia",
-            status: true
+            status: false
         }
          
         
