@@ -1,4 +1,4 @@
-// src/app/components/Login.tsx
+"use client";
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Link from 'next/link';
@@ -63,9 +63,7 @@ const Login: React.FC = () => {
           </div>
 
           <div className="text-center mt-4">
-            <Link href="/signup">
-              <a className="text-sm text-indigo-600 hover:text-indigo-900">Novo usuário? Cadastre-se aqui</a>
-            </Link>
+          <Link href="/signup" className="text-sm text-indigo-600 hover:text-indigo-900">Novo usuário? Cadastre-se aqui</Link>
           </div>
         </form>
       </div>
