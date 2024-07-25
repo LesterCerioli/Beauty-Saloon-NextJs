@@ -1,13 +1,17 @@
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
-import mock from "@/assets/interior-saloon-example.jpg"
 import { CiHeart } from "react-icons/ci";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-export function SaloonCardDetails(){
+interface SaloonCardProps{
+    img: string | StaticImport;
+}
+
+export function SaloonCardDetails({ img }: SaloonCardProps){
     return (
-        <section className="w-fit mt-6">
+        <section className="w-fit mt-6 rounded-xl p-1 border-1 hover:bg-slate-300">
             <div className="relative">
-                <Image className="h-40 w-52 rounded-xl" src={mock} alt="" />
+                <Image priority className="h-40 w-52 rounded-xl" src={img} alt="" />
                 <button className="absolute top-4 right-4 w-8 h-8 bg-[#FEF1F2] text-red-500 rounded-full flex items-center justify-center">
                     <CiHeart size={30} />
                 </button>

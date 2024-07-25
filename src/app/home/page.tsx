@@ -5,15 +5,15 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 
-import image from "../../assets/example_saloon.jpeg";
+import banner from "@/assets/example_saloon.jpeg"
+import { images } from "@/constants/carouselPlaceholderConstants";
 
 import { serviceList } from "@/constants/serviceConstants";
 import { ServiceButton } from "../components/ServiceButton";
 import Link from "next/link";
 import { responsive } from "@/constants/carouselSizeConstants";
 import { SaloonCardDetails } from "../components/SaloonCardDetails";
-
-
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Servico{
     id: number;
@@ -22,6 +22,10 @@ interface Servico{
     link: string;
 }
 
+interface ImageProps{
+    id: number,
+    path: string | StaticImport,
+}
 
 const Home: NextPage = () => {
     return (
@@ -38,38 +42,37 @@ const Home: NextPage = () => {
                 </div>
             </header>
             
-            
-            
-            <Image className="w-screen h-72 mt-6 rounded-lg" src={image} alt="" />
+            <Image className="w-screen h-72 mt-6 rounded-lg" src={banner} alt="" />
 
             <section className="mt-6 font-bold text-base">
                 <h5 className="text-[#111111]">O que você está procurando?</h5>
                 <div className=" mt-6 grid gap-4 grid-cols-4">
                     {
-                        
                         serviceList.map(({id, title, img, link}: Servico) => {
                             return (
                                 <ServiceButton key={id} id={id} img={img} title={title} link={link} />
                             )
                         })
                     }
-                    
                 </div>
             </section>
 
             <section className="mt-6">
 
                 <div className="flex items-center justify-between">
-                    
                     <h5 className="font-bold">Salões em destaque</h5>
                     <Link className="font-semibold text-sm text-btn-primary-color hover:underline decoration-1" href="#">Ver todos</Link>
-                    
                 </div>
                 
                 <Carousel
                     additionalTransfrom={0}
                     arrows
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
                     centerMode={false}
+                    className=""
+                    containerClass="container-with-dots"
+                    // customTransition="all 1s linear"
                     dotListClass=""
                     draggable
                     focusOnSelect={false}
@@ -77,7 +80,7 @@ const Home: NextPage = () => {
                     itemClass=""
                     keyBoardControl
                     minimumTouchDrag={80}
-                    pauseOnHover
+                    pauseOnHover={true}
                     renderArrowsWhenDisabled={false}
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
@@ -88,17 +91,18 @@ const Home: NextPage = () => {
                     shouldResetAutoplay
                     showDots={false}
                     sliderClass=""
-                    slidesToSlide={1}
+                    slidesToSlide={2}
                     swipeable
+                    // transitionDuration={1000}
                     >
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
-                        <SaloonCardDetails />
+                        {images.map((image) => {
+                            return (
+                                <SaloonCardDetails key={image.id} img={image.img} />
+                            );
+                        })}
                 </Carousel>
 
             </section>
-            
       </main>
     );
 }
