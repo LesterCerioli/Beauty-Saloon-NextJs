@@ -67,15 +67,20 @@ const Home: NextPage = () => {
                 <Carousel
                     additionalTransfrom={0}
                     arrows
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
                     centerMode={false}
+                    className=""
+                    containerClass="container-with-dots"
+                    // customTransition="all 1s linear"
                     dotListClass=""
                     draggable
                     focusOnSelect={false}
-                    infinite={false}
+                    infinite
                     itemClass=""
                     keyBoardControl
                     minimumTouchDrag={80}
-                    pauseOnHover
+                    pauseOnHover={true}
                     renderArrowsWhenDisabled={false}
                     renderButtonGroupOutside={false}
                     renderDotsOutside={false}
@@ -86,8 +91,9 @@ const Home: NextPage = () => {
                     shouldResetAutoplay
                     showDots={false}
                     sliderClass=""
-                    slidesToSlide={1}
+                    slidesToSlide={2}
                     swipeable
+                    // transitionDuration={1000}
                     >
                         {images.map((image) => {
                             return (
