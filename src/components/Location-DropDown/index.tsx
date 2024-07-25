@@ -22,7 +22,8 @@ const saloesData = {
             "cidade": "São Paulo",
             "estado": "SP"
         },
-        "especializacao": "Salão Unissex"
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         "nomeFantasia": "Salão Corte Certo",
@@ -35,8 +36,10 @@ const saloesData = {
             "cidade": "Rio de Janeiro",
             "estado": "RJ"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Glamour",
         "razaoSocial": "Glamour Cabeleireiros Ltda",
@@ -48,8 +51,10 @@ const saloesData = {
             "cidade": "Porto Alegre",
             "estado": "RS"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Charme",
         "razaoSocial": "Charme & Estilo Eireli",
@@ -61,8 +66,10 @@ const saloesData = {
             "cidade": "Curitiba",
             "estado": "PR"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estilo Livre",
         "razaoSocial": "Estilo Livre Cabelos e Estética ME",
@@ -74,8 +81,10 @@ const saloesData = {
             "cidade": "Belo Horizonte",
             "estado": "MG"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Elegância",
         "razaoSocial": "Elegância Cabeleireiros EPP",
@@ -87,8 +96,10 @@ const saloesData = {
             "cidade": "Brasília",
             "estado": "DF"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Cortes Finos",
         "razaoSocial": "Cortes Finos Cabeleireiros Ltda",
@@ -100,8 +111,10 @@ const saloesData = {
             "cidade": "Salvador",
             "estado": "BA"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Encanto",
         "razaoSocial": "Encanto Cabelos e Beleza Ltda",
@@ -113,8 +126,10 @@ const saloesData = {
             "cidade": "Fortaleza",
             "estado": "CE"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Arte dos Cabelos",
         "razaoSocial": "Arte dos Cabelos Eireli",
@@ -126,8 +141,10 @@ const saloesData = {
             "cidade": "Manaus",
             "estado": "AM"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estilo Livre",
         "razaoSocial": "Estilo Livre Cabeleireiros Ltda",
@@ -139,8 +156,10 @@ const saloesData = {
             "cidade": "Recife",
             "estado": "PE"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Top",
         "razaoSocial": "Estilo Livre Cabeleireiros Ltda",
@@ -152,8 +171,10 @@ const saloesData = {
             "cidade": "Recife",
             "estado": "PE"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Luxo",
         "razaoSocial": "Luxo Cabeleireiros Ltda",
@@ -165,8 +186,10 @@ const saloesData = {
             "cidade": "São Paulo",
             "estado": "SP"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Moda e Beleza",
         "razaoSocial": "Moda e Beleza ME",
@@ -178,8 +201,10 @@ const saloesData = {
             "cidade": "Rio de Janeiro",
             "estado": "RJ"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estética Viva",
         "razaoSocial": "Estética Viva Ltda",
@@ -191,8 +216,10 @@ const saloesData = {
             "cidade": "Porto Alegre",
             "estado": "RS"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Tendências",
         "razaoSocial": "Tendências e Estilo Eireli",
@@ -204,8 +231,10 @@ const saloesData = {
             "cidade": "Curitiba",
             "estado": "PR"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Top Hair",
         "razaoSocial": "Top Hair Cabelos e Estética ME",
@@ -217,8 +246,10 @@ const saloesData = {
             "cidade": "Belo Horizonte",
             "estado": "MG"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Chique",
         "razaoSocial": "Chique Cabeleireiros EPP",
@@ -230,8 +261,10 @@ const saloesData = {
             "cidade": "Brasília",
             "estado": "DF"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Fio de Ouro",
         "razaoSocial": "Fio de Ouro Cabeleireiros Ltda",
@@ -243,8 +276,10 @@ const saloesData = {
             "cidade": "Feira de Santana",
             "estado": "BA"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Beleza Rara",
         "razaoSocial": "Beleza Rara Ltda",
@@ -256,8 +291,10 @@ const saloesData = {
             "cidade": "Fortaleza",
             "estado": "CE"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
     {
         "nomeFantasia": "Salão Arte & Beleza",
         "razaoSocial": "Arte & Beleza Eireli",
@@ -269,9 +306,11 @@ const saloesData = {
             "cidade": "Manaus",
             "estado": "AM"
         },
-        "especializacao": "Salão Unissex"
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.pexels.com/photos/3992850/pexels-photo-3992850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
     }
-    ]
+  ]
 }
 
 export const HeaderLocation: React.FC<HeaderLocationProps> = ({ estado, cidade, bairro, onEstadoChange, onCidadeChange, onBairroChange }) => {

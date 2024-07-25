@@ -10,6 +10,7 @@ export interface Salao {
         bairro: string;
     };
     especializacao: string;
+    foto: string;
   }
   
   const saloesData = {
@@ -25,7 +26,8 @@ export interface Salao {
             "cidade": "São Paulo",
             "estado": "SP"
         },
-        "especializacao": "Salão Unissex"
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
     },
     {
         "nomeFantasia": "Salão Corte Certo",
@@ -38,8 +40,10 @@ export interface Salao {
             "cidade": "Rio de Janeiro",
             "estado": "RJ"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Glamour",
         "razaoSocial": "Glamour Cabeleireiros Ltda",
@@ -51,8 +55,10 @@ export interface Salao {
             "cidade": "Porto Alegre",
             "estado": "RS"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Charme",
         "razaoSocial": "Charme & Estilo Eireli",
@@ -64,8 +70,10 @@ export interface Salao {
             "cidade": "Curitiba",
             "estado": "PR"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estilo Livre",
         "razaoSocial": "Estilo Livre Cabelos e Estética ME",
@@ -77,8 +85,10 @@ export interface Salao {
             "cidade": "Belo Horizonte",
             "estado": "MG"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Elegância",
         "razaoSocial": "Elegância Cabeleireiros EPP",
@@ -90,8 +100,10 @@ export interface Salao {
             "cidade": "Brasília",
             "estado": "DF"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Cortes Finos",
         "razaoSocial": "Cortes Finos Cabeleireiros Ltda",
@@ -103,8 +115,10 @@ export interface Salao {
             "cidade": "Salvador",
             "estado": "BA"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Encanto",
         "razaoSocial": "Encanto Cabelos e Beleza Ltda",
@@ -116,8 +130,10 @@ export interface Salao {
             "cidade": "Fortaleza",
             "estado": "CE"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Arte dos Cabelos",
         "razaoSocial": "Arte dos Cabelos Eireli",
@@ -129,8 +145,10 @@ export interface Salao {
             "cidade": "Manaus",
             "estado": "AM"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estilo Livre",
         "razaoSocial": "Estilo Livre Cabeleireiros Ltda",
@@ -142,8 +160,10 @@ export interface Salao {
             "cidade": "Recife",
             "estado": "PE"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Top",
         "razaoSocial": "Estilo Livre Cabeleireiros Ltda",
@@ -155,8 +175,10 @@ export interface Salao {
             "cidade": "Recife",
             "estado": "PE"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Luxo",
         "razaoSocial": "Luxo Cabeleireiros Ltda",
@@ -168,8 +190,10 @@ export interface Salao {
             "cidade": "São Paulo",
             "estado": "SP"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Moda e Beleza",
         "razaoSocial": "Moda e Beleza ME",
@@ -181,8 +205,10 @@ export interface Salao {
             "cidade": "Rio de Janeiro",
             "estado": "RJ"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Estética Viva",
         "razaoSocial": "Estética Viva Ltda",
@@ -194,8 +220,10 @@ export interface Salao {
             "cidade": "Porto Alegre",
             "estado": "RS"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Tendências",
         "razaoSocial": "Tendências e Estilo Eireli",
@@ -207,8 +235,10 @@ export interface Salao {
             "cidade": "Curitiba",
             "estado": "PR"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Top Hair",
         "razaoSocial": "Top Hair Cabelos e Estética ME",
@@ -220,8 +250,10 @@ export interface Salao {
             "cidade": "Belo Horizonte",
             "estado": "MG"
         },
-        "especializacao": "Salão Masculino"
-    },
+        "especializacao": "Salão Masculino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Chique",
         "razaoSocial": "Chique Cabeleireiros EPP",
@@ -233,8 +265,10 @@ export interface Salao {
             "cidade": "Brasília",
             "estado": "DF"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Fio de Ouro",
         "razaoSocial": "Fio de Ouro Cabeleireiros Ltda",
@@ -246,8 +280,10 @@ export interface Salao {
             "cidade": "Feira de Santana",
             "estado": "BA"
         },
-        "especializacao": "Salão Unissex"
-    },
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Beleza Rara",
         "razaoSocial": "Beleza Rara Ltda",
@@ -259,8 +295,10 @@ export interface Salao {
             "cidade": "Fortaleza",
             "estado": "CE"
         },
-        "especializacao": "Salão Feminino"
-    },
+        "especializacao": "Salão Feminino",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+    }
+    ,
     {
         "nomeFantasia": "Salão Arte & Beleza",
         "razaoSocial": "Arte & Beleza Eireli",
@@ -272,7 +310,9 @@ export interface Salao {
             "cidade": "Manaus",
             "estado": "AM"
         },
-        "especializacao": "Salão Unissex"
+        "especializacao": "Salão Unissex",
+        "foto": "https://images.adsttc.com/media/images/6013/8f05/f91c/8125/1500/02d2/large_jpg/Roby_Salao_Beleza-3774.jpg?1611894525"
+
     }
   ]
 }
