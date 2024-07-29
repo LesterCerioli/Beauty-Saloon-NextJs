@@ -1,11 +1,12 @@
 import Home from "./home/page";
+import { OnBoarding } from "./OnBoarding";
 
 
 
 export default function app() {
   return (
     <>
-      <Home />
+      <OnBoarding/>
       {/* <h1>Index</h1> */}
       
     </>

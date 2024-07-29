@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import InputMask from 'react-input-mask';
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { NextPage } from "next";
-import axios from "axios";
+import axios from "axios"
 
 export const OnBoarding: NextPage = () => {
     const [nomeFantasia, setNomeFantasia] = useState('');
@@ -18,9 +18,24 @@ export const OnBoarding: NextPage = () => {
     const [localizacaoCidade, setLocalizacaoCidade] = useState("");
     const [localizacaoEstado, setLocalizacaoEstado] = useState("");
     const [localizacaoComplemento, setLocalizacaoComplemento] = useState("");
+    const [imagem, setImagem] = useState<File | null>(null);
 
     const [estados, setEstados] = useState<any[]>([]);
     const [cidades, setCidades] = useState<any[]>([]);
+
+    const handleImagemChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        const file = event.target.files ? event?.target.files[0] : null;
+        setImagem(file);
+    }
+
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+        event.preventDefault();
+        if (imagem) {
+          console.log(imagem);
+        } else {
+          console.log('Nenhuma imagem selecionada.');
+        }
+      }
     
     useEffect(() => {
         async function fetchEstados() {
@@ -49,7 +64,7 @@ export const OnBoarding: NextPage = () => {
 
     return (
         <main className="flex justify-center items-center h-screen bg-color-secundaria overflow-auto pt-48 pb-10">
-            <form className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-4 gap-3 rounded-xl m-10">
+            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-4 gap-3 rounded-xl m-10">
                 <h1 className="text-color-secundaria text-xl">Cadastrar Empresa</h1>     
                 <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
                     <label className="w-64">Nome fantasia da empresa:</label>
@@ -161,6 +176,28 @@ export const OnBoarding: NextPage = () => {
                         <option className="w-full">Salão Feminino</option>
                         <option className="w-full">Salão Unissex</option>
                     </select>
+                </div>
+
+                <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
+                    <label className="w-64">Imagem do Salão:</label>
+                    <div className="flex flex-col">
+                        <input
+                            onChange={handleImagemChange}
+                            type="file"
+                            accept="image/*"
+                            className="sr-only"
+                            id="fileInput"
+                        />
+                        <label 
+                            htmlFor="fileInput"
+                            className="w-60 px-2 py-1 rounded-xl transition-all duration-500 border-color-secundaria border-2 text-gray-700 cursor-pointer text-center"
+                        >
+                            Escolha uma imagem
+                        </label>
+                        {imagem && (
+                            <span className="mt-2 text-gray-600 text-sm">{imagem.name}</span>
+                        )}
+                    </div>
                 </div>
 
                 <div className="flex flex-col mb-2 gap-1 text-color-secundaria">
