@@ -12,6 +12,7 @@ import { ServiceButton } from "../components/ServiceButton";
 import Link from "next/link";
 import { responsive } from "@/constants/carouselSizeConstants";
 import { SaloonCardDetails } from "../components/SaloonCardDetails";
+import { LazyLoad } from "../components/LazyLoad";
 
 
 
@@ -66,7 +67,7 @@ const Home: NextPage = () => {
                     
                 </div>
                 
-                <Carousel
+                {/* <Carousel
                     additionalTransfrom={0}
                     arrows
                     centerMode={false}
@@ -95,7 +96,34 @@ const Home: NextPage = () => {
                         <SaloonCardDetails />
                         <SaloonCardDetails />
                         <SaloonCardDetails />
-                </Carousel>
+                </Carousel> */}
+
+                <div className="flex flex-wrap justify-evenly">
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                    <LazyLoad>
+                        <SaloonCardDetails />
+                    </LazyLoad>
+                </div>
 
             </section>
             
