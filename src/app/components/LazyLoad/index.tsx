@@ -1,34 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
-export function LazyLoad({children} : any){
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null);
+export function LazyLoad ({ children }: any) {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Renderizar apenas uma vez
+    threshold: 0.30, // Quantidade de visibilidade necessária para acionar (0.1 = 10%)
+  });
 
-    useEffect(()=> {
-        const currentRef = ref.current
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if(entry.isIntersecting){
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },{
-                threshold: 0.1,
-            }
-        );
-
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-              observer.unobserve(currentRef);
-            }
-          };
-    }, [ref]);
-
-    return (
-        <div ref={ref}>{isVisible ? children : null}</div>
-    );
-}
+  return (
+    <div ref={ref}>
+      {inView ? children : null}
+    </div>
+  );
+};
