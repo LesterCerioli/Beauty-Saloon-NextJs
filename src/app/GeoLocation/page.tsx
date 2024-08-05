@@ -11,7 +11,7 @@ import { MdErrorOutline } from "react-icons/md";
 import { IoReloadCircle } from "react-icons/io5";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 
-export const GeoLocation: NextPage = () => {
+const GeoLocation: NextPage = () => {
     const [saloes, setSaloes] = useState<Salao[]>([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState('');
     const [cidadeSelecionada, setCidadeSelecionada] = useState('');
@@ -118,3 +118,5 @@ export const GeoLocation: NextPage = () => {
         </main>
     );
 };
+
+export default GeoLocation;

@@ -5,7 +5,7 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 import { NextPage } from "next";
 import axios from "axios"
 
-export const OnBoarding: NextPage = () => {
+const OnBoarding: NextPage = () => {
     const [nomeFantasia, setNomeFantasia] = useState('');
     const [razaoSocial, setRazaoSocial] = useState('');
     const [cnpj, setCnpj] = useState('');
@@ -232,3 +232,5 @@ export const OnBoarding: NextPage = () => {
         </main>
     );
 }
+
+export default OnBoarding;
