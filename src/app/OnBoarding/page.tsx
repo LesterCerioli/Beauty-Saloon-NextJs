@@ -63,7 +63,7 @@ const OnBoarding: NextPage = () => {
     }, [localizacaoEstado]);
 
     return (
-        <main className="flex justify-center items-center h-screen bg-color-secundaria overflow-auto pt-48 pb-10">
+        <main className="flex justify-center items-center bg-color-secundaria overflow-auto pb-10">
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center bg-color-principal w-72 h-auto py-4 gap-3 rounded-xl m-10">
                 <h1 className="text-color-secundaria text-xl">Cadastrar Empresa</h1>     
                 <div className="flex flex-col mb-2 gap-1 text-color-secundaria">

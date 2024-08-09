@@ -7,7 +7,7 @@ import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa";
 const ViewCustomer: NextPage = () => {
     const [customers, setCustomers] = useState<Customer[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const customersPerPage = 6; 
+    const customersPerPage = 10; 
     const topRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

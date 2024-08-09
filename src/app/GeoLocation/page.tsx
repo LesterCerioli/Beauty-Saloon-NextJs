@@ -53,7 +53,7 @@ const GeoLocation: NextPage = () => {
     };
 
     return (
-        <main className="flex flex-row flex-wrap h-screen justify-center bg-color-secundaria overflow-auto gap-5 py-8 xl:items-start">
+        <main className="flex flex-row flex-wrap justify-center bg-color-secundaria overflow-auto gap-5 py-8 mb-9 xl:items-start">
             <div className="flex flex-col gap-2 px-4 w-full max-w-xs xl:max-w-md">
                 <HeaderLocation
                     estado={estadoSelecionado}
