@@ -11,7 +11,7 @@ import { MdErrorOutline } from "react-icons/md";
 import { IoReloadCircle } from "react-icons/io5";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 
-export const GeoLocation: NextPage = () => {
+const GeoLocation: NextPage = () => {
     const [saloes, setSaloes] = useState<Salao[]>([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState('');
     const [cidadeSelecionada, setCidadeSelecionada] = useState('');
@@ -53,7 +53,7 @@ export const GeoLocation: NextPage = () => {
     };
 
     return (
-        <main className="flex flex-row flex-wrap h-screen justify-center bg-color-secundaria overflow-auto gap-5 py-8 xl:items-start">
+        <main className="flex flex-row flex-wrap justify-center bg-color-secundaria overflow-auto gap-5 py-8 mb-9 xl:items-start">
             <div className="flex flex-col gap-2 px-4 w-full max-w-xs xl:max-w-md">
                 <HeaderLocation
                     estado={estadoSelecionado}
@@ -118,3 +118,5 @@ export const GeoLocation: NextPage = () => {
         </main>
     );
 };
+
+export default GeoLocation;

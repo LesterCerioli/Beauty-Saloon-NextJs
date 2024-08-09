@@ -30,19 +30,17 @@ const ViewSchedules: NextPage = () => {
     const cancelCustomers = customers.filter(customer => !customer.status);
 
     return (
-        <main className="flex justify-center min-h-screen bg-color-secundaria overflow-auto py-2 pb-10">
+        <main className="flex justify-center bg-color-secundaria overflow-auto py-2 pb-10">
             <section className="flex flex-col items-center w-full text-sm py-4">
                 <h1 className="text-color-principal m-1">AGENDADOS</h1>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-row flex-wrap items-center justify-center gap-4">
                     {confirmedCustomers.map(customer => (
-                        <div key={customer.id} className="bg-green-500 p-1 rounded-xl">
-                            <div className="bg-color-principal text-gray-700 flex flex-col gap-1 rounded-md p-1">
-                                <p className="flex items-center gap-1"><IoPerson />Nome: {customer.nome}</p>
-                                <p className="flex items-center gap-1"><MdDateRange />Data: {customer.data}</p>
-                                <p className="flex items-center gap-1"><TbClockHour2Filled />Horário: {customer.horario}</p>
-                                <p className="flex items-center gap-1"><TiScissorsOutline />Atendende: {customer.atendente}</p>
-                                <p className="flex items-center gap-1"><FaRegCircleCheck />Status: {customer.status ? "Agendado" : "Cancelado"}</p>
-                            </div>
+                        <div key={customer.id} className="bg-color-principal justify-center w-44 h-36 p-1 rounded-xl text-gray-700 flex flex-col gap-1 border-4 border-green-500">
+                            <p className="flex items-center gap-1"><IoPerson />Nome: {customer.nome}</p>
+                            <p className="flex items-center gap-1"><MdDateRange />Data: {customer.data}</p>
+                            <p className="flex items-center gap-1"><TbClockHour2Filled />Horário: {customer.horario}</p>
+                            <p className="flex items-center gap-1"><TiScissorsOutline />Atendende: {customer.atendente}</p>
+                            <p className="flex items-center gap-1"><FaRegCircleCheck />Status: {customer.status ? "Agendado" : "Cancelado"}</p>
                         </div>
                     ))}
                 </div>
@@ -50,16 +48,14 @@ const ViewSchedules: NextPage = () => {
             
             <section className="flex flex-col items-center w-full text-sm py-4">
                 <h1 className="text-color-principal m-1">CANCELADOS</h1>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-row flex-wrap items-center justify-center gap-4">
                     {cancelCustomers.map(customer => (
-                        <div key={customer.id} className="bg-red-500 p-1 rounded-xl">
-                            <div className="bg-color-principal text-gray-700 flex flex-col gap-1 rounded-md p-1">
-                                <p className="flex items-center gap-1"><IoPerson />Nome: {customer.nome}</p>
-                                <p className="flex items-center gap-1"><MdDateRange />Data: {customer.data}</p>
-                                <p className="flex items-center gap-1"><TbClockHour2Filled />Horário: {customer.horario}</p>
-                                <p className="flex items-center gap-1"><TiScissorsOutline />Atendende: {customer.atendente}</p>
-                                <p className="flex items-center gap-1"><VscError />Status: {customer.status ? "Agendado" : "Cancelado"}</p>
-                            </div>
+                        <div  key={customer.id} className="bg-color-principal justify-center w-44 h-36 p-1 rounded-xl text-gray-700 flex flex-col gap-1 border-4 border-red-500">
+                            <p className="flex items-center gap-1"><IoPerson />Nome: {customer.nome}</p>
+                            <p className="flex items-center gap-1"><MdDateRange />Data: {customer.data}</p>
+                            <p className="flex items-center gap-1"><TbClockHour2Filled />Horário: {customer.horario}</p>
+                            <p className="flex items-center gap-1"><TiScissorsOutline />Atendende: {customer.atendente}</p>
+                            <p className="flex items-center gap-1"><VscError />Status: {customer.status ? "Agendado" : "Cancelado"}</p>
                         </div>
                     ))}
                 </div>
